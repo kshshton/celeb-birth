@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from scrape.wiki import date_of_birth
+from scrape.wiki import Person
 
 app = Flask(__name__, template_folder='templates')
 
@@ -13,7 +13,8 @@ def index():
 def post():
     first_name = request.form['first_name']
     last_name = request.form['last_name']
-    return render_template('index.html', date=date_of_birth(first_name, last_name))
+    person = Person(first_name, last_name)
+    return render_template('index.html', date=person.get_date_of_birth(), img=person.get_image())
 
 
 def main():
