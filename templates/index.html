@@ -8,9 +8,14 @@
     <title>Document</title>
 </head>
 <body>
+    {% if date %}
+        <p class="items">{{ date }}</p>
+    {% endif %}
+
     {% if form %}
         {% include form %}
+    {% else %}
+        <a class="items" href="/">Wróć</a>
     {% endif %}
-    <p>{{ date }}</p>
 </body>
 </html>

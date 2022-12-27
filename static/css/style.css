@@ -11,5 +11,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-flow: column;
     margin-top: 20%;
+}
+
+.items {
+    color: black;
+    margin: 10px;
 }
