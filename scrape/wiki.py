@@ -17,6 +17,10 @@ class Person:
         response = session.get(url=self.URL + formatted_name(name, surname), headers=session.headers, cookies=session.cookies)
         self.soup = BeautifulSoup(response.content, 'html.parser')
 
+    
+    def get_name(self) -> str:
+        return self.soup.find('span', {'class', 'mw-page-title-main'}).text
+
 
     def get_date_of_birth(self) -> str:
         '''Scraping person's date of birth'''

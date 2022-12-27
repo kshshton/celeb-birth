@@ -14,7 +14,11 @@ def post():
     first_name = request.form['first_name']
     last_name = request.form['last_name']
     person = Person(first_name, last_name)
-    return render_template('index.html', date=person.get_date_of_birth(), img=person.get_image())
+    return render_template('index.html', 
+            name=person.get_name(),
+            date=person.get_date_of_birth(), 
+            img=person.get_image()
+        )
 
 
 def main():
