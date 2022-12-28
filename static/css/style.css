@@ -63,6 +63,7 @@ input:hover {
 img {
     width: 350px;
     transition: .3s;
+    border: 2px solid white;
 }
 .btn_result:hover {
     transform: scale(1.05);
