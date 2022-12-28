@@ -10,15 +10,20 @@ class Person:
     URL: str = 'https://pl.wikipedia.org/wiki/'
 
 
-    def __init__(self, name, surname) -> None:
+    def __init__(self, name: str, surname: str) -> None:
         '''Initialize person's name'''
         session = requests.Session()
         session.get(self.URL)
-        response = session.get(url=self.URL + formatted_name(name, surname), headers=session.headers, cookies=session.cookies)
+        response = session.get(
+                url=self.URL + formatted_name(name, surname), 
+                headers=session.headers, 
+                cookies=session.cookies
+            )
         self.soup = BeautifulSoup(response.content, 'html.parser')
 
     
     def get_name(self) -> str:
+        '''Scraping person's name'''
         return self.soup.find('span', {'class', 'mw-page-title-main'}).text
 
 
@@ -35,6 +40,7 @@ class Person:
                 if result == '':
                     result = re.search('.*?>(\d[^<]+)', str(tag)).group(1)
                 return result
+
 
     def get_image(self) -> str:
         '''Scraping person's image'''
