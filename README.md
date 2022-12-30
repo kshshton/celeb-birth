@@ -1,19 +1,22 @@
+# Functionality
+### *Celeb browser*. Application designed for searching date of birth of celebrity person.
+![second_image](static\assets\pudzian.png)
+
 # Setup
 
-* ### Upgrade pip to the latest version:
+> ### Upgrade pip to the latest version:
 ```python
 python -m pip install --user --upgrade pip
 ```
-<br>
 
-* ### Install virtual environment:
+> ### Install virtual environment:
 ```python
 python -m pip install --user virtualenv
 python -m venv %venv_name% #creates folder in your current directory
 ```
-<br>
 
-* ### Activate virtual environment:
+> ### Activate virtual environment:
+<br>
 
 **bash**
 ```bash
@@ -23,15 +26,13 @@ source %venv_name%/bin/activate
 ```powershell
 .\%venv_name%\Scripts\Activate.ps1
 ```
-<br>
 
-* ### Install dependencies:
+> ### Install dependencies:
 ```python
 pip install -r requirements.txt
 ```
-<br>
 
-* ### Set environment variable:
+> ### Set environment variable:
 
 **bash**:
 ```bash
@@ -41,9 +42,8 @@ export FLASK_APP=app.py
 ```powershell
 set FLASK_APP=app.py
 ```
-<br>
 
-* ### Run flask server:
+> ### Run flask server:
 ```python
 flask run
 ```
