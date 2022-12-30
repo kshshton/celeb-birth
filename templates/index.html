@@ -11,12 +11,12 @@
     {% if form %}
         {% include form %}
     {% else %}
-        {% if date %}
+        {% if img %}
             <img src="{{ img }}">
             <p class="items">{{ name }}</p>
-            <p class="items">{{ date }}</p>
+            <p class="items">urodzony {{ date }}</p>
         {% else %}
-            <p class="items">Nie znaleziono osoby...</p>
+            <p class="items">{{ error }}</p>
         {% endif %}
         <a class="items btn_result" href="/">Wróć</a>
     {% endif %}

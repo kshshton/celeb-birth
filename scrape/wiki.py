@@ -14,8 +14,16 @@ class Person:
         '''Initialize person's name'''
         session = requests.Session()
         session.get(self.URL)
-        response = session.get(url=self.URL + formatted_name(name, surname), headers=session.headers, cookies=session.cookies)
+        response = session.get(
+            url=self.URL + formatted_name(name, surname), 
+            headers=session.headers, 
+            cookies=session.cookies
+        )
         self.soup = BeautifulSoup(response.content, 'html.parser')
+
+
+    def get_name(self) -> str:
+        return self.soup.find('span', {'class', 'mw-page-title-main'}).text
 
 
     def get_date_of_birth(self) -> str:
