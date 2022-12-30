@@ -1,16 +1,17 @@
 '''Web scraping functions'''
 
-from bs4 import BeautifulSoup
-from utils.functions import formatted_name
 import re
 import requests
+from bs4 import BeautifulSoup
+from utils.functions import formatted_name
 
 
 class Person:
+    '''Blueprint of searched person'''
     URL: str = 'https://pl.wikipedia.org/wiki/'
 
 
-    def __init__(self, name, surname) -> None:
+    def __init__(self, name: str, surname: str) -> None:
         '''Initialize person's name'''
         session = requests.Session()
         session.get(self.URL)
@@ -23,6 +24,7 @@ class Person:
 
 
     def get_name(self) -> str:
+        '''Scraping person's full name'''
         return self.soup.find('span', {'class', 'mw-page-title-main'}).text
 
 
