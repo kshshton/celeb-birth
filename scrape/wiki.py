@@ -25,7 +25,7 @@ class Person:
 
     def get_name(self) -> str:
         '''Scraping person's full name'''
-        return self.soup.find('span', {'class', 'mw-page-title-main'}).text
+        return self.soup.find('span', {'class', 'mw-page-title-main'}).text.strip()
 
 
     def get_date_of_birth(self) -> str:
@@ -40,7 +40,7 @@ class Person:
                     result += match.group(1) + ' '
                 if result == '':
                     result = re.search('.*?>(\d[^<]+)', str(tag)).group(1)
-                return result
+                return result.strip()
 
     def get_image(self) -> str:
         '''Scraping person's image'''
