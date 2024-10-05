@@ -1,6 +1,9 @@
 # Functionality
 ### *Celeb browser*. Application designed for searching date of birth of celebrity person.
-<img src="static/assets/pudzian.png">
+<br>
+<div align="center">
+  <img src="static/assets/pudzian.png" alt="image" width="500"/>
+</div>
 
 # Setup
 
